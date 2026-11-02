@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA DIGITAL | Web Design Studio</title>
+<meta name="description" content="NEXORA DIGITAL builds modern, responsive websites for businesses.">
+
+<style>
+:root {
+  --bg:#090d18;
+  --card:#121b30;
+  --text:#f5f7ff;
+  --muted:#aab5cb;
+  --purple:#8b7cff;
+  --cyan:#45d7c4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(circle at top right,#25204c,#090d18 45%);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1150px;margin:auto}
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 0;border-bottom:1px solid #ffffff18;
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:3px}
+.logo span{color:var(--cyan)}
+nav ul{display:flex;gap:25px;list-style:none}
+nav ul a{color:var(--muted);font-size:14px}
+nav ul a:hover{color:white}
+.hero{
+  min-height:620px;display:flex;align-items:center;
+  justify-content:space-between;gap:35px;padding:70px 0;
+}
+.hero-content{max-width:650px}
+.tagline{color:var(--cyan);font-size:12px;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.08;margin:20px 0}
+.gradient{
+  background:linear-gradient(90deg,#a99cff,#45d7c4);
+  -webkit-background-clip:text;color:transparent
+}
+.hero p{color:var(--muted);font-size:17px;max-width:550px}
+.buttons{display:flex;gap:15px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  padding:13px 22px;border-radius:10px;
+  font-weight:bold;font-size:14px;display:inline-block;
+  transition:.3s
+}
+.primary{background:var(--purple);color:white}
+.secondary{border:1px solid #ffffff35}
+.btn:hover{transform:translateY(-4px)}
+.hero-box{
+  width:340px;min-height:300px;border:1px solid #ffffff25;
+  border-radius:25px;background:linear-gradient(145deg,#202b48,#11182b);
+  padding:30px;box-shadow:0 20px 70px #0008;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.hero-box h2{font-size:30px;line-height:1.2}
+.hero-box p{font-size:13px;margin-top:15px}
+.hero-box .symbol{font-size:55px;color:var(--cyan);margin-bottom:15px}
+section{padding:85px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title small{color:var(--cyan);letter-spacing:3px;font-weight:bold}
+.section-title h2{font-size:38px;margin-top:10px}
+.section-title p{color:var(--muted);margin-top:10px}
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+}
+.card{
+  background:var(--card);border:1px solid #ffffff12;
+  border-radius:18px;padding:27px;transition:.3s
+}
+.card:hover{transform:translateY(-6px);border-color:var(--purple)}
+.card .icon{font-size:30px;color:var(--cyan)}
+.card h3{margin:14px 0 8px}
+.card p{color:var(--muted);font-size:14px}
+.project{
+  overflow:hidden;background:var(--card);
+  border:1px solid #ffffff15;border-radius:18px
+}
+.project-art{
+  height:190px;display:flex;align-items:center;
+  justify-content:center;padding:20px
+}
+.project:nth-child(1) .project-art{background:linear-gradient(135deg,#f4c69d,#9e6047)}
+.project:nth-child(2) .project-art{background:linear-gradient(135deg,#b9c9ff,#626fb0)}
+.project:nth-child(3) .project-art{background:linear-gradient(135deg,#b2e8d1,#408e79)}
+.preview{
+  background:white;color:#222;width:85%;height:135px;
+  border-radius:12px;padding:15px;box-shadow:0 12px 25px #0004
+}
+.preview h3{font-size:21px;line-height:1.2}
+.preview p{font-size:10px;color:#777;margin-top:8px}
+.preview button{
+  background:#8172e9;color:white;border:0;
+  padding:6px 12px;border-radius:5px;margin-top:12px
+}
+.project-info{padding:20px}
+.project-info p{color:var(--muted);font-size:13px}
+.demo-tag{
+  color:var(--cyan);font-size:10px;
+  letter-spacing:1px;font-weight:bold;margin-top:10px;display:block
+}
+.process .card{min-height:170px}
+.number{color:var(--cyan);font-weight:bold;font-size:13px}
+.contact{
+  text-align:center;padding:65px 25px;
+  border:1px solid #ffffff20;border-radius:25px;
+  background:linear-gradient(130deg,#191b39,#101a2d)
+}
+.contact h2{font-size:38px}
+.contact p{color:var(--muted);margin:15px auto 25px;max-width:550px}
+footer{
+  border-top:1px solid #ffffff18;padding:25px 0;
+  color:var(--muted);font-size:12px;text-align:center
+}
+@media(max-width:800px){
+  .hero{flex-direction:column;align-items:flex-start;min-height:auto}
+  .hero-box{width:100%;min-height:230px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:550px){
+  nav ul{gap:12px;font-size:11px}
+  nav ul a{font-size:11px}
+  .logo{font-size:16px;letter-spacing:1px}
+  .grid{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .section-title h2,.contact h2{font-size:30px}
+  .hero{padding:65px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header class="container">
+<nav>
+  <a href="#" class="logo">NEXORA<span>.</span></a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<main>
+<div class="container">
+<section class="hero">
+  <div class="hero-content">
+    <div class="tagline">FRONTEND WEB DEVELOPMENT STUDIO</div>
+    <h1>We Build <span class="gradient">Digital Experiences.</span></h1>
+    <p>Modern, responsive and professional websites designed to help businesses stand out online.</p>
+    <div class="buttons">
+      <a href="#contact" class="btn primary">Start a Project ↗</a>
+      <a href="#work" class="btn secondary">View Our Work</a>
+    </div>
+  </div>
+  <div class="hero-box">
+    <div class="symbol">✦</div>
+    <h2>Design.<br>Develop.<br>Deliver.</h2>
+    <p>Creative frontend solutions for modern businesses.</p>
+  </div>
+</section>
+</div>
+
+<section id="services">
+<div class="container">
+  <div class="section-title">
+    <small>OUR SERVICES</small>
+    <h2>What We Create</h2>
+    <p>Professional frontend solutions for your business.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="icon">✦</div><h3>Landing Pages</h3><p>Beautiful landing pages for products, services and campaigns.</p></div>
+    <div class="card"><div class="icon">▤</div><h3>Business Websites</h3><p>Professional websites that showcase your business.</p></div>
+    <div class="card"><div class="icon">◎</div><h3>Portfolio Websites</h3><p>Modern personal portfolios to showcase your work.</p></div>
+    <div class="card"><div class="icon">⌂</div><h3>Restaurant Websites</h3><p>Elegant websites with menus and business information.</p></div>
+    <div class="card"><div class="icon">▣</div><h3>Responsive Design</h3><p>Websites that adapt to mobile, tablet and desktop screens.</p></div>
+    <div class="card"><div class="icon">⌘</div><h3>Website Redesign</h3><p>Give your existing website a fresh modern appearance.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+  <div class="section-title">
+    <small>OUR PORTFOLIO</small>
+    <h2>Creative Demo Projects</h2>
+    <p>Explore sample website concepts created by NEXORA DIGITAL.</p>
+  </div>
+  <div class="grid">
+    <div class="project">
+      <div class="project-art"><div class="preview"><h3>Olive & Ember</h3><p>Fresh food. Beautiful moments.</p><button>Explore Menu</button></div></div>
+      <div class="project-info"><h3>Restaurant Website</h3><p>Modern restaurant website concept.</p><span class="demo-tag">DEMO CONCEPT</span></div>
+    </div>
+    <div class="project">
+      <div class="project-art"><div class="preview"><h3>Northline Realty</h3><p>Find a place to call home.</p><button>View Properties</button></div></div>
+      <div class="project-info"><h3>Real Estate Website</h3><p>Professional property showcase concept.</p><span class="demo-tag">DEMO CONCEPT</span></div>
+    </div>
+    <div class="project">
+      <div class="project-art"><div class="preview"><h3>Forma Fitness</h3><p>Build strength. Find balance.</p><button>Join Us</button></div></div>
+      <div class="project-info"><h3>Fitness Website</h3><p>Modern fitness business website concept.</p><span class="demo-tag">DEMO CONCEPT</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+  <div class="section-title">
+    <small>OUR PROCESS</small>
+    <h2>How We Work</h2>
+  </div>
+  <div class="grid process">
+    <div class="card"><div class="number">01 / DISCOVER</div><h3>Understand Your Needs</h3><p>We discuss your business, goals and website requirements.</p></div>
+    <div class="card"><div class="number">02 / DEVELOP</div><h3>Build Your Website</h3><p>We create a responsive frontend based on your requirements.</p></div>
+    <div class="card"><div class="number">03 / DELIVER</div><h3>Final Handover</h3><p>After approval, we deliver the agreed website files.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="contact">
+    <div class="tagline">HAVE A PROJECT IN MIND?</div>
+    <h2>Let's Build Something Great.</h2>
+    <p>Tell us about your project. Let's create a professional online presence for your business.</p>
+    <!-- Replace the email below with your real business email -->
+    <a class="btn primary" href="mailto:malikadeel9942@gmail.com?subject=Website%20Enquiry">Contact NEXORA ↗</a>
+  </div>
+</div>
+</section>
+</main>
+
+<footer id="contact">
+<div class="container">
+  © <span id="year"></span> NEXORA DIGITAL. All Rights Reserved.
+  <br>Frontend Web Design & Development
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
